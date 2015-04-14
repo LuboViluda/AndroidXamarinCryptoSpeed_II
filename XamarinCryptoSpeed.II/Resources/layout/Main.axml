@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/AES128Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AES128" />
+    <Button
+        android:id="@+id/AES256Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AES256" />
+    <Button
+        android:id="@+id/TripleDESButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TripleDES" />
+    <Button
+        android:id="@+id/SHA1Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHA1" />
+    <Button
+        android:id="@+id/MD5Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MD5" />
+</LinearLayout>

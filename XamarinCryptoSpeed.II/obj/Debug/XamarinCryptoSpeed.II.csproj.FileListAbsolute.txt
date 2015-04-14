@@ -1,0 +1,17 @@
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\bin\Debug\XamarinCryptoSpeed.II.dll
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\bin\Debug\XamarinCryptoSpeed.II.pdb
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\bin\Debug\XamarinCryptoSpeed.II.dll.mdb
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\bin\Debug\XamarinCryptoSpeed.II.apk
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\bin\Debug\XamarinCryptoSpeed.II-Signed.apk
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\XamarinCryptoSpeed.II.dll
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\XamarinCryptoSpeed.II.pdb
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\android\bin\XamarinCryptoSpeed.II.apk
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\layout\main.xml
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\values\strings.xml
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\drawable-hdpi\icon.png
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\drawable-mdpi\icon.png
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\drawable-xhdpi\icon.png
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\drawable-xxhdpi\icon.png
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\res\drawable-xxxhdpi\icon.png
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\R.cs.flag
+C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\obj\Debug\uploadflags.txt

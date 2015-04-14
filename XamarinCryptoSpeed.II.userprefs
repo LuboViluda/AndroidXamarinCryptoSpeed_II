@@ -1,0 +1,35 @@
+﻿<Properties StartupItem="XamarinCryptoSpeed.II\XamarinCryptoSpeed.II.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Default_Nexus_5" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinCryptoSpeed.II\MainActivity.cs">
+    <Files>
+      <File FileName="XamarinCryptoSpeed.II\MainActivity.cs" Line="16" Column="44" />
+      <File FileName="XamarinCryptoSpeed.II\CommonAuxiliaryCode.cs" Line="1" Column="1" />
+      <File FileName="XamarinCryptoSpeed.II\Constants.cs" Line="1" Column="1" />
+      <File FileName="XamarinCryptoSpeed.II\AES.cs" Line="79" Column="4" />
+      <File FileName="XamarinCryptoSpeed.II\Hash.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="XamarinCryptoSpeed.II" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Assets" expanded="True" />
+            <Node name="Properties" expanded="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True">
+                <Node name="Main.axml" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Lubo\Documents\Projects\XamarinCryptoSpeed.II\XamarinCryptoSpeed.II\AES.cs" line="28" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.XamarinCryptoSpeed.II AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinCryptoSpeed.II", "XamarinCryptoSpeed.II\XamarinCryptoSpeed.II.csproj", "{ABFBBB74-9336-47D2-9DBD-0781A13A8AFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABFBBB74-9336-47D2-9DBD-0781A13A8AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFBBB74-9336-47D2-9DBD-0781A13A8AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFBBB74-9336-47D2-9DBD-0781A13A8AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFBBB74-9336-47D2-9DBD-0781A13A8AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
