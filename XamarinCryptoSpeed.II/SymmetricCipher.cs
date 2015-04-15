@@ -1,28 +1,34 @@
 ﻿using System;
-using Android.Content;
+using Android.Util;
+using Android.Widget;
 using System.Text;
 using System.IO;
-using Android.Util;
 using System.Security.Cryptography;
-using Android.Widget;
+using Android.Content;
+using Mono.Security;
+using Mono.Security.Cryptography;
 
 namespace XamarinCryptoSpeed.II
 {
-	public class Desed
+	public class SymmetricCipher
 	{
 		byte[] key = null;
-		byte[] iv = new byte[8]; 	// AES has 16 bits counter
-		int keyLength { get; set; }
+		byte[] iv = null; 	// AES has 16 bytes counter, TripleDES 8 bytes
+		int keyLength;
+		String cipherName = null;
+		Context appContext;
 
-		public Desed (int parKeyLength)
+		public SymmetricCipher (String parCipherName, int parKeyLength, int parIvLength, Context parAppContext)
 		{
+			cipherName = parCipherName;
 			keyLength = parKeyLength;
-			key = new byte[keyLength / 8];
 			key = CommonAuxiliaryCode.GenerateKey(parKeyLength / 8);
+			iv = new byte[parIvLength];
 			CommonAuxiliaryCode.GenerateDummyBytes(iv);
+			appContext = parAppContext;
 		}
 
-		public void testDesed(String cipherName, Context appContext)
+		public void TestSymmetricCipher()
 		{
 			byte[] b1 = new byte[Constants.SIZE];
 			byte[] b2 = null;
@@ -42,14 +48,15 @@ namespace XamarinCryptoSpeed.II
 			{
 				using (MemoryStream ms = new MemoryStream())
 				{
-					using (var desed = new TripleDESCryptoServiceProvider())
+					using (var symCipher = SymmetricCipher.GetCipher(cipherName))
 					{
-						desed.KeySize = 192;		// but only 168 bits are internaly really used
-						desed.Key = key;
-						desed.IV = iv;
-						desed.Mode = CipherMode.CBC;
+						symCipher.KeySize = 128;
 
-						using (var cs = new CryptoStream(ms, desed.CreateEncryptor(), CryptoStreamMode.Write))
+						symCipher.Key = key;
+						symCipher.IV = iv;
+						symCipher.Mode = CipherMode.CBC;
+
+						using (var cs = new CryptoStream(ms, symCipher.CreateEncryptor(), CryptoStreamMode.Write))
 						{
 							startEncryption = DateTime.Now.ToFileTime();
 							cs.Write(b1, 0, b1.Length);
@@ -59,16 +66,17 @@ namespace XamarinCryptoSpeed.II
 						b2 = ms.ToArray();
 					}
 				}
-
-				using (MemoryStream ms = new MemoryStream ()) {
-					using (var desed = new TripleDESCryptoServiceProvider()) 
+					
+				using (MemoryStream ms = new MemoryStream ()) 
+				{
+					using (var symCipher = SymmetricCipher.GetCipher(cipherName)) 
 					{
-						desed.KeySize = 192;
-						desed.Key = key;
-						desed.IV = iv;
-						desed.Mode = CipherMode.CBC;
+						symCipher.KeySize = 128;
+						symCipher.Key = key;
+						symCipher.IV = iv;
+						symCipher.Mode = CipherMode.CBC;
 
-						using (var cs = new CryptoStream (ms, desed.CreateDecryptor (), CryptoStreamMode.Write)) {
+						using (var cs = new CryptoStream (ms, symCipher.CreateDecryptor (), CryptoStreamMode.Write)) {
 							startDecryption = DateTime.Now.ToFileTime();
 							cs.Write (b2, 0, b2.Length);
 							endDecryption = DateTime.Now.ToFileTime();
@@ -78,16 +86,18 @@ namespace XamarinCryptoSpeed.II
 					}
 				}	
 				// comparation, builds buffers
-				if (CommonAuxiliaryCode.CmpByteArrayShowResult (b1, b3, cipherName + " attempt: " + i)) {
+				if (CommonAuxiliaryCode.CmpByteArrayShowResult (b1, b3, cipherName + " attempt: " + i)) 
+				{
 					encTime [i] = (((double)endEncryption / 10000.0) - ((double)startEncryption) / 10000.0);
 					sumEncryption += encTime [i];
 					decTime [i] = (((double)endDecryption / 10000.0) - ((double)startDecryption) / 10000.0);
 					sumDecryption += decTime [i];
-					Log.Info (Constants.TAG, cipherName + " attempt : " + i + " ended successful time enc: " + encTime [i] + " dec : " + decTime [i]);
+					Log.Info (Constants.TAG, cipherName + "-" + keyLength + " attempt : " + i + " ended successful time enc: " + encTime [i] + " dec : " + decTime [i]);
 					bufferEncryption.Append (encTime [i] + ",");
 					bufferDecryption.Append (decTime [i] + ",");
 					b3 [0] = 0;
-				} else {   // shoudn't happen, skipp test
+				} else 
+				{   // shoudn't happen, skipp test
 					Log.Error (Constants.TAG, cipherName + " plain text and plain text after enc/den differs !!!");
 					return;
 				}
@@ -97,11 +107,31 @@ namespace XamarinCryptoSpeed.II
 			Log.Info (Constants.TAG, "Test " + cipherName + " by provider: " + " ended succesfully");
 			Log.Info (Constants.TAG, "Averange values: " + encR + "," + decR);
 			Toast.MakeText (appContext, "ENC time: " + encR + " DEC time: " + decR, ToastLength.Short).Show ();
-			CommonAuxiliaryCode.WriteToFile (cipherName + ".C#.D." + Constants.SIZE + "x"
+			CommonAuxiliaryCode.WriteToFile (cipherName + "-" + keyLength + ".C#.D." + Constants.SIZE + "x"
 				+ Constants.REPETITION + ".csv", bufferDecryption.ToString ());
-			CommonAuxiliaryCode.WriteToFile (cipherName + ".C#.E." + Constants.SIZE + "x"
+			CommonAuxiliaryCode.WriteToFile (cipherName + "-" + keyLength +".C#.E." + Constants.SIZE + "x"
 				+ Constants.REPETITION + ".csv", bufferEncryption.ToString ());
 		}
+
+		public static SymmetricAlgorithm GetCipher (String algorithmName)
+		{
+			if(algorithmName.Equals("TripleDES"))
+			{
+				return new TripleDESCryptoServiceProvider();
+			}
+			if(algorithmName.Equals("AES"))
+			{
+				return new AesCryptoServiceProvider();
+			}
+			if(algorithmName.Equals("ARC4"))
+			{
+				return new ARC4Managed();	
+			}
+			Log.Error(Constants.TAG, "SymmetricCipher Error, GetCipher asked for no supported algorithm");
+			return null;
+		}
+		
+			
 	}
 }
 

@@ -19,6 +19,11 @@
         android:layout_height="wrap_content"
         android:text="TripleDES" />
     <Button
+        android:id="@+id/ARC4Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ARC4" />
+    <Button
         android:id="@+id/SHA1Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

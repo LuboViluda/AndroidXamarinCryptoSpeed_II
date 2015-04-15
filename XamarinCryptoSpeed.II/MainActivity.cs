@@ -19,21 +19,20 @@ namespace XamarinCryptoSpeed.II
 
 			Button button = FindViewById<Button>(Resource.Id.AES128Button);
 			button.Click += delegate {
-				var AES128 = new AES(128);
-				AES128.testAES("AES128", Application.Context);
+				var AES128 = new SymmetricCipher("AES", 128, 16, Application.Context);
+				AES128.TestSymmetricCipher();
 			};
 
 			button = FindViewById<Button>(Resource.Id.AES256Button);
 			button.Click += delegate {
-				var AES128 = new AES(256);
-				AES128.testAES("AES256", Application.Context);
+				var AES256 = new SymmetricCipher("AES", 256, 16, Application.Context);
+				AES256.TestSymmetricCipher();
 			};
-
-
+				
 			button = FindViewById<Button>(Resource.Id.TripleDESButton);
 			button.Click += delegate {
-				var AES128 = new AES(192);
-				AES128.testAES("TripleDES", Application.Context);
+				var tripleDES = new SymmetricCipher("TripleDES", 196, 8, Application.Context);
+				tripleDES.TestSymmetricCipher();
 			};
 
 			button = FindViewById<Button>(Resource.Id.MD5Button);
@@ -44,6 +43,12 @@ namespace XamarinCryptoSpeed.II
 			button = FindViewById<Button>(Resource.Id.SHA1Button);
 			button.Click += delegate {
 				Hash.TestHash("SHA1");
+			};
+
+			button = FindViewById<Button>(Resource.Id.ARC4Button);
+			button.Click += delegate {
+				var tripleDES = new SymmetricCipher("ARC4", 128, 8, Application.Context);
+				tripleDES.TestSymmetricCipher();
 			};
 		}
 	}
