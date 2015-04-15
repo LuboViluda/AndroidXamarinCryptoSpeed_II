@@ -59,6 +59,14 @@ namespace XamarinCryptoSpeed.II
 			{
 				return System.Security.Cryptography.SHA1.Create();
 			}
+			if(algorithmName.Equals("MD5Mono")) 
+			{
+				return new MD5CryptoServiceProvider();
+			}
+			if(algorithmName.Equals("SHA1Mono"))
+			{
+				return new SHA1CryptoServiceProvider ();
+			}
 			Log.Error(Constants.TAG, "Test skipped, called no supported algorithm : " + algorithmName);
 			return null;
 		}

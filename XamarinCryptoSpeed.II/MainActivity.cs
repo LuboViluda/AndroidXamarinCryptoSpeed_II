@@ -50,6 +50,23 @@ namespace XamarinCryptoSpeed.II
 				var tripleDES = new SymmetricCipher("ARC4", 128, 8, Application.Context);
 				tripleDES.TestSymmetricCipher();
 			};
+
+			button = FindViewById<Button>(Resource.Id.RSA1024Button);
+			button.Click += delegate {
+				var RSA1024 =  new RSA(1024);
+				RSA1024.TestSignature(Application.Context);
+			};
+
+			button = FindViewById<Button>(Resource.Id.MD5MonoButton);
+			button.Click += delegate {
+				Hash.TestHash("MD5Mono");
+			};
+
+			button = FindViewById<Button>(Resource.Id.SHA1MonoButton);
+			button.Click += delegate {
+				Hash.TestHash("SHA1Mono");
+			};
+
 		}
 	}
 }

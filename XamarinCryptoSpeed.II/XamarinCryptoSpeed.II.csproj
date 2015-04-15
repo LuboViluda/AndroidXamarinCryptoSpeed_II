@@ -52,6 +52,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="SymmetricCipher.cs" />
+    <Compile Include="RSA.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

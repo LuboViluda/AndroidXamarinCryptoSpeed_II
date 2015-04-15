@@ -24,13 +24,33 @@
         android:layout_height="wrap_content"
         android:text="ARC4" />
     <Button
+        android:id="@+id/MD5Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MD5" />
+    <Button
         android:id="@+id/SHA1Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SHA1" />
     <Button
-        android:id="@+id/MD5Button"
+        android:id="@+id/MD5MonoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MD5" />
+        android:text="MD5-Mono" />
+    <Button
+        android:id="@+id/SHA1MonoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHA1-Mono" />
+    <Button
+        android:id="@+id/RSA1024Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RSA1024-SHA1" />
+    <Button
+        android:id="@+id/RSA2048Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RSA2048-SHA1" />
 </LinearLayout>

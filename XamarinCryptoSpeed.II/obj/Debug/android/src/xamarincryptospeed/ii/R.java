@@ -17,8 +17,12 @@ public final class R {
         public static final int AES128Button=0x7f050000;
         public static final int AES256Button=0x7f050001;
         public static final int ARC4Button=0x7f050003;
-        public static final int MD5Button=0x7f050005;
-        public static final int SHA1Button=0x7f050004;
+        public static final int MD5Button=0x7f050004;
+        public static final int MD5MonoButton=0x7f050006;
+        public static final int RSA1024Button=0x7f050008;
+        public static final int RSA2048Button=0x7f050009;
+        public static final int SHA1Button=0x7f050005;
+        public static final int SHA1MonoButton=0x7f050007;
         public static final int TripleDESButton=0x7f050002;
     }
     public static final class layout {
